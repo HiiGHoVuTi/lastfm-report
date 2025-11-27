@@ -19,3 +19,6 @@ clean:
 export: public/index.html
 	ssh $(EXPORT_REMOTE) rm -rf $(EXPORT_PATH)/$(THIS)
 	scp -r public $(EXPORT_REMOTE):$(EXPORT_PATH)/$(THIS)
+
+export-local: public/index.html
+	cp -r public $(EXPORT_PATH)/$(THIS)
