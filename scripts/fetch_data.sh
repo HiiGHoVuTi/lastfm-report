@@ -15,7 +15,7 @@ fi
 
 API_KEY=${API_KEY}
 USERNAME="jupons"
-PERIOD="7day"
+PERIOD="31day"
 LIMIT="10"
 
 # Fetch top artists
