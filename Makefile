@@ -7,6 +7,10 @@ EXPORT_PATH := $(shell pwd)
 
 all: public/index.html
 
+force:
+	make clean
+	make all
+
 public/index.html: public/data.json scripts/generate_html.sh
 	bash scripts/generate_html.sh
 
@@ -20,6 +24,6 @@ export: public/index.html
 	ssh $(EXPORT_REMOTE) rm -rf $(EXPORT_PATH)/$(THIS)
 	scp -r public $(EXPORT_REMOTE):$(EXPORT_PATH)/$(THIS)
 
-export-local: public/index.html
+export-local: force
 	rm -rf $(EXPORT_PATH)/$(THIS)
 	cp -r public $(EXPORT_PATH)/$(THIS)
