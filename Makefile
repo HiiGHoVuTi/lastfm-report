@@ -21,4 +21,5 @@ export: public/index.html
 	scp -r public $(EXPORT_REMOTE):$(EXPORT_PATH)/$(THIS)
 
 export-local: public/index.html
+	rm -rf $(EXPORT_PATH)/$(THIS)
 	cp -r public $(EXPORT_PATH)/$(THIS)
