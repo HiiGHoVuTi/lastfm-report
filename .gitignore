@@ -1,4 +1,5 @@
 .env
 public/response.json
 public/data.json
+public/top-songs.json
 public/index.html
